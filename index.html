@@ -21,9 +21,29 @@
         <details class="exe1">
             <summary>Exercício 1</summary>
             <div class="resultado">
-                    <script>
+                <p>
+                    Escreva um algoritmo que:
+                    <br>
+                    Pergunte o nome de uma pessoa;
+                    Pergunte qual o sobrenome da pessoa;
+                    Mostre o nome completo na tela.
+                </p>
+                <br>
+                <!------------------------------Solução------------------------------------>
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome"><br><br>
+                <label for="sobrenome">Sobrenome:</label>
+                <input type="text" id="sobrenome" name="sobrenome"><br><br>
+                <p id="nomeCompleto"></p><br><br>
+                <button onclick="enviarNome()">Enviar</button>
+                <script>
+                    function enviarNome() {
+                    let nome = document.getElementById("nome").value;
+                    let sobrenome = document.getElementById("sobrenome").value;
 
-                    </script>
+                    document.getElementById("nomeCompleto").innerHTML = "Seu nome completo é: " + nome + " " + sobrenome +".";
+                    }
+                </script>
             </div>
         </details>
         <br>
@@ -32,8 +52,26 @@
         <details class="exe2">
             <summary> Exercício 2</summary>
             <div class="resultado">
+                <p>
+                    Escreva um algoritmo que leia dois valores numéricos e depois mostre a diferença entre eles 
+                    <br>
+                    (o primeiro menos o segundo).
+                </p><br><br>
+                <!------------------------------Solução------------------------------------>
+                <label>Digite um número:</label><br><br>
+                <input type="number" id="numero1"><br><br>
+                <label>Digite outro número:</label><br><br>
+                <input type="number" id="numero2"><br><br>
+                <p id="diferenca"></p><br><br>
+                <button onclick="verDiferencia()">Ver a diferença</button>
                 <script>
+                    function verDiferencia(){
+                        var num1 = document.getElementById("numero1").value;
+                        var num2 = document.getElementById("numero2").value;
+                        var diferenca = num1 - num2;
 
+                        document.getElementById("diferenca").innerHTML = "A diferença entre eles é de: " + diferenca;
+                    }
                 </script> 
             </div>
         </details>
@@ -43,8 +81,20 @@
         <details class="exe3">
             <summary>Exercício 3</summary>
             <div class="resultado">
+                <p>Crie um algoritmo que leia dois números nas variáveis numA e numB, nessa ordem, e os mostre na tela em ordem inversa, isto é, se os dados lidos forem 7 e 15, por exemplo, devem ser mostrados na ordem 15 e 7, um embaixo do outro (em linhas distintas).</p>
+                <!-----------------Solução---------------------------->
+                <label>Digite dois numeros:</label><br><br>
+                <input type="number" id="num1">
+                <input type="number" id="num2"><br><br>
+                <p id="mostar"></p><br><br>
+                <button onclick="mostrarNumeros()">Mostrar</button>
                 <script>
+                    function mostrarNumeros(){
+                        let num1 = document.getElementById("num1").value;
+                        let num2 = document.getElementById("num2").value;
 
+                        document.getElementById("mostar").innerHTML = num2 + "<br>" + num1;
+                    }
                 </script>
             </div>
         </details>
@@ -54,8 +104,30 @@
         <details class="exe4">
             <summary>Exercício 4</summary>
             <div class="resultado">
+                <p>
+                    O sistema de avaliação de determinada disciplina é composto por três provas. A primeira prova tem peso 2, a segunda tem peso 3 e a terceira tem peso 5.
+                    <br>
+                    Elabore um algoritmo que calcule a média final de um aluno desta disciplina.
+                </p><br>
+                <!--------------------Solução--------------------->
+                <label>Digite as notas:</label><br><br>
+                <input type="number" id="nota1" placeholder="Prova 1">
+                <input type="number" id="nota2" placeholder="Prova 2">
+                <input type="number" id="nota3" placeholder="Prova 3">
+                <br><br>
+                <p id="media"></p>
+                <br><br>
+                <button onclick="calcularNota()">Calcular media</button>
                 <script>
+                    function calcularNota(){
+                        var n1 = document.getElementById("nota1").value;
+                        var n2 = document.getElementById("nota2").value;
+                        var n3 = document.getElementById("nota3").value;
+                        var media = n1 * 2 + n2 * 3 + n3 * 5 / 10;
 
+                        document.getElementById("media").innerHTML = "Média Final: " + media;
+
+                    }
                 </script>
             </div>
         </details>
@@ -65,8 +137,25 @@
         <details class="exe5">
             <summary>Exercício 5</summary>
             <div class="resultado">
+                <p>
+                    Crie um programa no qual o usuário deverá inserir os valores da altura, largura e profundidade de uma caixa d’água, em cm. No final, exiba o volume dessa caixa d’água.
+                </p><br>
+                <!---Solução--->
+                <label>Digite os valeres da caixa d'agua em cm.</label><br><br>
+                <input type="number" id="altura" placeholder="Altura da Caixa D'agua">
+                <input type="number" id="largura" placeholder="Largura da Caixa D'agua">
+                <input type="number" id="profundidade" placeholder="Profundidade da Caixa D'agua"><br><br>
+                <p id="volumedacaixadagua"></p><br><br>
+                <button onclick="calcularVolume()">Calcular Volume</button>
                 <script>
+                    function calcularVolume(){
+                        var altura = document.getElementById("altura").value;
+                        var largura = document.getElementById("largura").value;
+                        var profund = document.getElementById("profundidade").value;
+                        var volume = altura * largura * profund;
 
+                        document.getElementById("volumedacaixadagua").innerHTML = "A caixa d'água tem capacidade de " + volume + " cm³";
+                    }
                 </script>
             </div>
         </details>
@@ -76,8 +165,26 @@
         <details class="exe6">
             <summary>Exercício 6</summary>
             <div class="resultado">
+                <p>
+                    Crie um programa que peça para o usuário informar os valores da base e da altura de um triângulo, em centímetros, e então mostre na tela o valor da área desse triângulo.
+                </p>
+                <br><br>
+                <!---------Solução------------>
+                <label>Digite os valores da base e da altura de um triângulo, em cm:</label><br><br>
+                <input type="number" name="base" id="base" placeholder="Base">
+                <input type="number" name="altura" id="alturaT" placeholder="Altura">
+                <br><br>
+                <p id="area"></p>
+                <br><br>
+                <button onclick="calcularArea()">Calcular área</button>
                 <script>
+                    function calcularArea(){
+                        var base = document.getElementById("base").value;
+                        var altura = document.getElementById("alturaT").value;
+                        var area = base * altura / 2;
 
+                        document.getElementById("area").innerHTML = "A área total é " + area + "cm²";
+                    }
                 </script>
             </div>
         </details>
